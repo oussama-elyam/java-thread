@@ -1,7 +1,6 @@
 package com.oussama.ex4multithreading;
 
 //In this example, we create two threads (thread1 and thread2) that execute concurrently.
-// Each thread counts from 1 to 5 and sleeps for 1 second between counts.
 // The start() method is used to begin the execution of each thread, and join() is used to wait for both threads to finish before the main thread continues.
 //
 //When you run this program, you'll see that the two threads may interleave their execution,
@@ -32,6 +31,22 @@ public class MultithreadingExample {
                 }
             }
         });
+        //other way to write this lambda expression
+        /*
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println("Thread 2: Count " + i);
+                    try {
+                        Thread.sleep(1000); // Sleep for 1 second
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        */
 
         // Start both threads
         thread1.start();

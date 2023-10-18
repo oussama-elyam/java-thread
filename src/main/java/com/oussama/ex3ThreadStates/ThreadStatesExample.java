@@ -1,7 +1,7 @@
 package com.oussama.ex3ThreadStates;
 
 
-//This example demonstrates the various thread states such as NEW, RUNNABLE, and TERMINATED.
+//This example demonstrates the various thread states such as NEW, RUNNABLE, TIME-WAITING, and TERMINATED.
 // Note that the thread may transition through other states, but these are the most commonly encountered ones.
 public class ThreadStatesExample {
     public static void main(String[] args) {
@@ -13,10 +13,11 @@ public class ThreadStatesExample {
             }
         });
 
+        thread.start();
         System.out.println("Thread State (NEW): " + thread.getState());
 
-        thread.start();
         System.out.println("Thread State (RUNNABLE): " + thread.getState());
+
 
         try {
             thread.join();
